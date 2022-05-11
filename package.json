@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "huskyTest": "npm run prettier:write"
+    "huskyTest": "npm run prettier:write && npm run eslint"
   },
   "dependencies": {
     "next": "12.1.6",
