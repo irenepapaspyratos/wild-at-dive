@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 describe('Single Spot-Display', () => {
-	it('renders every important detail of spot & the names of animals living there & NOT the names of animals not living there & the names of organiz', () => {
+	it('renders every important detail of spot & the names of animals living there & NOT the names of animals not living there & the names of organizers at this location & NOT the names of organizers not located at this location', () => {
 		render(
 			<Spot
 				spot={{
