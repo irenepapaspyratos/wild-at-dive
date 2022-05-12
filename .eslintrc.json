@@ -8,7 +8,8 @@
     "eslint:recommended",
     "next/core-web-vitals",
     "eslint-config-prettier",
-    "eslint-config-xo-react"
+    "eslint-config-xo-react",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,7 +25,7 @@
     "eslint-plugin-jest"
   ],
   "rules": {
-    "react/prop-types": 0,
+    "react/prop-types": 1,
     "react/react-in-jsx-scope": 0,
     "react/jsx-tag-spacing": [2, { "beforeSelfClosing": "always" }]
   }

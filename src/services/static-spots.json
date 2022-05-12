@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "Bimini",
+    "country": "Bahamas",
+    "geoTag": { "latitude": "25.703188", "longitude": "-79.281459" },
+    "description": "nice and warm"
+  },
+  {
+    "id": "2",
+    "name": "Gran Bahama",
+    "country": "Bahamas",
+    "geoTag": { "latitude": "26.661393", "longitude": "-78.268353" },
+    "description": "nice and warm"
+  },
+  {
+    "id": "3",
+    "name": "Galápagos",
+    "country": "Ecuador",
+    "geoTag": { "latitude": "-0.628815", "longitude": "-90.363875" },
+    "description": "nice and warm"
+  },
+  {
+    "id": "4",
+    "name": "Socorro Islands",
+    "country": "Mexico",
+    "geoTag": { "latitude": "18.792742", "longitude": "-110.982031" },
+    "description": "nice and warm"
+  },
+  {
+    "id": "5",
+    "name": "Neptun Islands",
+    "country": "Australia",
+    "geoTag": { "latitude": "-35.231599", "longitude": "136.064987" },
+    "description": "nice and warm"
+  }
+]
