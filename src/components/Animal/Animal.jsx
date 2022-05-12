@@ -31,7 +31,7 @@ export default function Spot({ spots, animal, organizers }) {
 					{organizers.map(organizer => {
 						let varloc = false;
 						organizer.spots.forEach(location => {
-							varloc = location.animals.includes(animal.name);
+							varloc = location.animals.find(loc => animal.name === loc);
 						});
 						return varloc && <li key={organizer.id}>{organizer.name}</li>;
 					})}

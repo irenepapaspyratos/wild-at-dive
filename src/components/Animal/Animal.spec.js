@@ -22,6 +22,13 @@ describe('Single Animal-Display', () => {
 						description: 'nice and warm',
 					},
 					{
+						id: '3',
+						name: 'Galápagos',
+						country: 'Ecuador',
+						geoTag: { latitude: '-0.628815', longitude: '-90.363875' },
+						description: 'nice and warm',
+					},
+					{
 						id: '4',
 						name: 'Socorro Islands',
 						country: 'Mexico',
@@ -59,7 +66,7 @@ describe('Single Animal-Display', () => {
 							{
 								name: 'Socorro Islands',
 								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
+								animals: ['Shark', 'Dolphin'],
 							},
 						],
 					},
@@ -70,7 +77,7 @@ describe('Single Animal-Display', () => {
 							{
 								name: 'Neptun Islands',
 								area: 'South Australia, Spencer Gulf',
-								animals: 'Shark',
+								animals: ['Shark'],
 							},
 						],
 					},
