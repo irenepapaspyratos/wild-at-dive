@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import Spot from '../src/components/Spot/Spot';
 import getStaticData from '../src/services/get-staticData';
 
-export async function getStaticProps() {
-	const spots = await getStaticData('spots');
-	const animals = await getStaticData('animals');
-	const organizers = await getStaticData('organizers');
+export function getStaticProps() {
+	const spots = getStaticData('spots');
+	const animals = getStaticData('animals');
+	const organizers = getStaticData('organizers');
 
 	return { props: { spots: spots, animals: animals, organizers: organizers } };
 }
 
 export default function Home({ spots, animals, organizers }) {
-	return <Spot spot={{ ...spots[0] }} animals={animals} orgsnizers={organizers} />;
+	return <Spot spot={{ ...spots[1] }} animals={animals} organizers={organizers} />;
 }
 
 Home.propTypes = {
