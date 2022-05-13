@@ -98,7 +98,7 @@ describe('Single Animal-Display', () => {
 		expect(animalDetail5).toBeInTheDocument();
 	});
 
-	it('renders the names of spots where animal lives & NOT the names of spots where animal is not living ', () => {
+	it('renders only names of spots where animal lives', () => {
 		render(
 			<Animal
 				spots={[
@@ -189,7 +189,7 @@ describe('Single Animal-Display', () => {
 		expect(nameSpot3).not.toBeInTheDocument();
 	});
 
-	it("renders the names of organizers who arrange diving with animal & NOT the names of organizers who don't arrange diving with animal ", () => {
+	it('renders only names of organizers who arrange diving with animal', () => {
 		render(
 			<Animal
 				spots={[

@@ -94,7 +94,7 @@ describe('Single Spot-Display', () => {
 		expect(spotDetail5).toBeInTheDocument();
 	});
 
-	it('renders the names of animals living there & NOT the names of animals not living there', () => {
+	it('renders only names of animals living there', () => {
 		render(
 			<Spot
 				spot={{
@@ -179,7 +179,7 @@ describe('Single Spot-Display', () => {
 		expect(nameAnimal2).not.toBeInTheDocument();
 	});
 
-	it('renders the names of organizers at this location & NOT the names of organizers not located at this location', () => {
+	it('renders only names of organizers at this location', () => {
 		render(
 			<Spot
 				spot={{
