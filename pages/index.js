@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-import Spot from '../src/components/Spot/Spot';
 import getStaticData from '../src/services/get-staticData';
+import Spot from '../src/components/Spot/Spot';
+import Animal from '../src/components/Animal/Animal';
 
 export function getStaticProps() {
 	const spots = getStaticData('spots');
@@ -12,7 +13,12 @@ export function getStaticProps() {
 }
 
 export default function Home({ spots, animals, organizers }) {
-	return <Spot spot={{ ...spots[1] }} animals={animals} organizers={organizers} />;
+	return (
+		<>
+			<Spot spot={{ ...spots[1] }} animals={animals} organizers={organizers} />
+			<Animal spots={spots} animal={{ ...animals[0] }} organizers={organizers} />
+		</>
+	);
 }
 
 Home.propTypes = {
