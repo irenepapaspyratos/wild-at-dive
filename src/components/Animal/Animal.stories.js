@@ -74,12 +74,12 @@ const props = {
 				{
 					name: 'Socorro Islands',
 					area: 'Colima, Revillagigedo Archipelago',
-					animals: ['Shark, Dolphin'],
+					animals: ['Shark', 'Dolphin'],
 				},
 				{
 					name: 'Neptun Islands',
 					area: 'South Australia, Spencer Gulf',
-					animals: 'Shark',
+					animals: ['Shark'],
 				},
 			],
 		},
