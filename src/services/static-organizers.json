@@ -2,6 +2,7 @@
   {
     "id": "1",
     "name": "Unexso",
+    "description": "friendly people, good service",
     "spots": [
       {
         "name": "Freeport",
@@ -13,6 +14,7 @@
   {
     "id": "2",
     "name": "Silversea Cruises",
+    "description": "friendly people, good service",
     "spots": [
       {
         "name": "San Cristóbal",
@@ -24,6 +26,7 @@
   {
     "id": "3",
     "name": "Pacific Fleet",
+    "description": "friendly people, good service",
     "spots": [
       {
         "name": "Socorro Islands",
