@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 export default function Organizer({ organizer }) {
-	console.log(organizer.spots);
 	return (
 		<article>
 			<header>
