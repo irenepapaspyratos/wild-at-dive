@@ -68,7 +68,7 @@ describe('Single Spot-Display', () => {
 							{
 								name: 'Neptun Islands',
 								area: 'South Australia, Spencer Gulf',
-								animals: 'Shark',
+								animals: ['Shark'],
 							},
 							{
 								name: 'Freeport',
@@ -159,7 +159,7 @@ describe('Single Spot-Display', () => {
 							{
 								name: 'Neptun Islands',
 								area: 'South Australia, Spencer Gulf',
-								animals: 'Shark',
+								animals: ['Shark'],
 							},
 							{
 								name: 'Freeport',
@@ -244,7 +244,7 @@ describe('Single Spot-Display', () => {
 							{
 								name: 'Neptun Islands',
 								area: 'South Australia, Spencer Gulf',
-								animals: 'Shark',
+								animals: ['Shark'],
 							},
 							{
 								name: 'Freeport',
