@@ -1,8 +1,8 @@
-import Animal from '../../Animal/Animal';
+import Spot from './Spot';
 
 export default {
-	title: 'Components/Animal',
-	component: Animal,
+	title: 'Components/Spot',
+	component: Spot,
 	decorators: [
 		Story => {
 			return (
@@ -15,35 +15,28 @@ export default {
 };
 
 const props = {
-	spots: [
+	spot: {
+		id: '2',
+		name: 'Gran Bahama',
+		country: 'Bahamas',
+		geoTag: { latitude: '26.661393', longitude: '-78.268353' },
+		description: 'nice and warm',
+	},
+	animals: [
 		{
 			id: '1',
-			name: 'Bimini',
-			country: 'Bahamas',
-			geoTag: { latitude: '25.703188', longitude: '-79.281459' },
-			description: 'nice and warm',
+			name: 'Dolphin',
+			spots: ['Gran Bahama', 'Bimini', 'Galápagos'],
+			description: 'friendly, very intelligent, likes to play',
 		},
 		{
 			id: '2',
-			name: 'Gran Bahama',
-			country: 'Bahamas',
-			geoTag: { latitude: '26.661393', longitude: '-78.268353' },
-			description: 'nice and warm',
-		},
-		{
-			id: '3',
-			name: 'Galápagos',
-			country: 'Ecuador',
-			geoTag: { latitude: '-0.628815', longitude: '-90.363875' },
-			description: 'nice and warm',
+			name: 'Shark',
+			spots: ['Galápagos', 'Socorro Islands'],
+			description:
+				'despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time..',
 		},
 	],
-	animal: {
-		id: '1',
-		name: 'Dolphin',
-		spots: ['Gran Bahama', 'Bimini', 'Galápagos'],
-		description: 'friendly, very intelligent, likes to play',
-	},
 	organizers: [
 		{
 			id: '1',
@@ -87,5 +80,5 @@ const props = {
 };
 
 export function Default() {
-	return <Animal {...props} />;
+	return <Spot {...props} />;
 }
