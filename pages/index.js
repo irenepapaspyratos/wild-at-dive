@@ -4,6 +4,7 @@ import getStaticData from '../src/services/get-staticData';
 import Spot from '../src/components/Spot/Spot';
 import Animal from '../src/components/Animal/Animal';
 import Organizer from '../src/components/Organizer/Organizer';
+import ElementList from '../src/components/ElementList/ElementList';
 
 export function getStaticProps() {
 	const spots = getStaticData('spots');
@@ -19,6 +20,9 @@ export default function Home({ spots, animals, organizers }) {
 			<Spot spot={{ ...spots[1] }} animals={animals} organizers={organizers} />
 			<Animal spots={spots} animal={{ ...animals[0] }} organizers={organizers} />
 			<Organizer organizer={{ ...organizers[2] }} />
+			<ElementList elements={spots} header="Spots" />
+			<ElementList elements={animals} header="Animals" />
+			<ElementList elements={organizers} header="Organizers" />
 		</>
 	);
 }
