@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MapContainer = styled.div`
+const MapContainer = styled.section`
 	height: 50vw;
 	width: 50vw;
 `;

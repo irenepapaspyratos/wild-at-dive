@@ -2,7 +2,7 @@ import Map from './Map';
 import 'cesium/Build/Cesium/Widgets/widgets.css';
 
 export default {
-	title: 'Components/Organizer',
+	title: 'Components/Map',
 	component: Map,
 	decorators: [
 		Story => {

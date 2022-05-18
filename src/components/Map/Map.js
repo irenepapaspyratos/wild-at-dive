@@ -1,7 +1,17 @@
+import MapContainer from '../ui/MapContainer/MapContainer.styled';
 import dynamic from 'next/dynamic';
 
-const Map = dynamic(() => import('../../services/map'), {
-	ssr: false,
-});
+function Map() {
+	const Globe = dynamic(() => import('../../services/map'), {
+		ssr: false,
+	});
+
+	return (
+		<>
+			<MapContainer id="cesiumContainer" />
+			<Globe />
+		</>
+	);
+}
 
 export default Map;
