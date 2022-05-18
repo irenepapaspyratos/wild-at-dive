@@ -7,7 +7,6 @@ import Organizer from '../src/components/Organizer/Organizer';
 import ElementList from '../src/components/ElementList/ElementList';
 import Map from '../src/components/Map/Map';
 
-
 export function getStaticProps() {
 	const spots = getStaticData('spots');
 	const animals = getStaticData('animals');
@@ -25,7 +24,7 @@ export default function Home({ spots, animals, organizers }) {
 			<ElementList elements={spots} header="Spots" />
 			<ElementList elements={animals} header="Animals" />
 			<ElementList elements={organizers} header="Organizers" />
-      <Map />
+			<Map />
 		</>
 	);
 }
