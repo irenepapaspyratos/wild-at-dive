@@ -2,7 +2,7 @@ import Organizer from './Organizer';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-describe('Single Spot-Display', () => {
+describe('Single Organizer-Display', () => {
 	it('renders name. location-names and animal-names of organizer', () => {
 		render(
 			<Organizer

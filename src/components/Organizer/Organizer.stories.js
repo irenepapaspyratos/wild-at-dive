@@ -18,6 +18,7 @@ const props = {
 	organizer: {
 		id: '3',
 		name: 'Pacific Fleet',
+		description: 'friendly people, good service',
 		spots: [
 			{
 				name: 'Socorro Islands',
