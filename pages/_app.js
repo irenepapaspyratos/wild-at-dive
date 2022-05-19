@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import 'cesium/Build/Cesium/Widgets/widgets.css';
 import GlobalStyle from '../src/components/ui/basics/GlobalStyle';
 
 function MyApp({ Component, pageProps }) {
