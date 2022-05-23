@@ -6,6 +6,9 @@ const GlobalStyle = createGlobalStyle`
     .cesium-viewer-animationContainer, .cesium-viewer-bottom, .cesium-viewer-timelineContainer {
     display: none;
     }
+    .cesium-infoBox-title {
+        color: white;
+    }
 `;
 
 export default GlobalStyle;

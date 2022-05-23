@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 export default function Spot({ spot, animals, organizers }) {
+	console.log(spot);
 	return (
 		<article>
 			<header>
@@ -12,11 +13,11 @@ export default function Spot({ spot, animals, organizers }) {
 				<h3>Geo-Tag</h3>
 				<div>
 					<h4>Latitude</h4>
-					<p>{spot.geoTag.latitude}</p>
+					<p>{spot.geoTag.longitude}</p>
 				</div>
 				<div>
 					<h4>Longitude</h4>
-					<p>{spot.geoTag.longitude}</p>
+					<p>{spot.geoTag.latitude}</p>
 				</div>
 			</section>
 
@@ -30,7 +31,7 @@ export default function Spot({ spot, animals, organizers }) {
 				<ul>
 					{animals
 						.filter(animal => {
-							return animal.spots.includes(spot.name) && animal.name;
+							return animal.spotsRef.includes(spot.id) && animal.name;
 						})
 						.map(animal => {
 							return <li key={animal.id}>{animal.name}</li>;

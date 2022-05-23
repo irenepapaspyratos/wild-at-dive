@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function Spot({ spots, animal, organizers }) {
+export default function Animal({ spots, animal, organizers }) {
 	return (
 		<article>
 			<header>
@@ -17,7 +17,7 @@ export default function Spot({ spots, animal, organizers }) {
 				<ul>
 					{spots
 						.filter(spot => {
-							return animal.spots.includes(spot.name) && spot.name;
+							return animal.spotsRef.includes(spot.id) && spot.name;
 						})
 						.map(spot => {
 							return <li key={spot.id}>{spot.name}</li>;
@@ -41,7 +41,7 @@ export default function Spot({ spots, animal, organizers }) {
 	);
 }
 
-Spot.propTypes = {
+Animal.propTypes = {
 	spots: PropTypes.array,
 	animal: PropTypes.object,
 	organizers: PropTypes.array,
