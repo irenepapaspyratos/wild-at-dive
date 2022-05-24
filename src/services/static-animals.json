@@ -1,14 +1,14 @@
 [
   {
-    "id": "1",
+    "id": "Animal1",
     "name": "Dolphin",
-    "spots": ["Gran Bahama", "Bimini", "Galápagos"],
+    "spotsRef": ["Spot1", "Spot2", "Spot3", "Spot4"],
     "description": "friendly, very intelligent, likes to play"
   },
   {
-    "id": "2",
+    "id": "Animal2",
     "name": "Shark",
-    "spots": ["Galápagos", "Socorro Islands"],
+    "spotsRef": ["Spot2", "Spot3", "Spot4", "Spot5"],
     "description": "despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time.."
   }
 ]

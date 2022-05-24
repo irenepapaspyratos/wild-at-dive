@@ -1,42 +1,46 @@
 [
   {
-    "id": "1",
+    "id": "Organizer1",
     "name": "Unexso",
     "description": "friendly people, good service",
     "spots": [
       {
         "name": "Freeport",
         "area": "Gran Bahama",
-        "animals": ["Dolphin"]
+        "animals": ["Animal1"],
+        "spotsRef": ["Spot1", "Spot2"]
       }
     ]
   },
   {
-    "id": "2",
+    "id": "Organizer2",
     "name": "Silversea Cruises",
     "description": "friendly people, good service",
     "spots": [
       {
         "name": "San Cristóbal",
         "area": "Galápagos",
-        "animals": ["Dolphin", "Shark"]
+        "animals": ["Animal1", "Animal2"],
+        "spotsRef": ["Spot3"]
       }
     ]
   },
   {
-    "id": "3",
+    "id": "Organizer3",
     "name": "Pacific Fleet",
     "description": "friendly people, good service",
     "spots": [
       {
         "name": "Socorro Islands",
         "area": "Colima, Revillagigedo Archipelago",
-        "animals": ["Shark", "Dolphin"]
+        "animals": ["Animal1", "Animal2"],
+        "spotsRef": ["Spot4"]
       },
       {
         "name": "Neptun Islands",
         "area": "South Australia, Spencer Gulf",
-        "animals": ["Shark"]
+        "animals": ["Animal2"],
+        "spotsRef": ["Spot5"]
       }
     ]
   }
