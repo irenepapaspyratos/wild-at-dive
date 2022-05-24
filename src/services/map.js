@@ -8,7 +8,7 @@ export default function map() {
 		const viewer = new Viewer('cesiumContainer', {
 			terrainProvider: createWorldTerrain(),
 		});
-
+		viewer.scene.camera.moveBackward(4000000);
 		viewer && AddMarkers(viewer);
 	}
 }
