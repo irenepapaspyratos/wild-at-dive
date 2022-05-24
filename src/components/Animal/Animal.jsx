@@ -17,24 +17,31 @@ export default function Spot({ spots, animal, organizers }) {
 				<ul>
 					{spots
 						.filter(spot => {
-							return animal.spots.includes(spot.name) && spot.name;
+							return animal.spotsRef.includes(spot.id) && spot.name;
 						})
 						.map(spot => {
-							return <li key={spot.id}>{spot.name}</li>;
+							return (
+								<li key={spot.id}>
+									<h4>{spot.name}</h4>
+									<h5>Organizers</h5>
+									<ul>
+										{organizers
+											.filter(organizer => {
+												const result = organizer.spots.find(location => {
+													return (
+														location.spotsRef.includes(spot.id) &&
+														organizer
+													);
+												});
+												return result && organizer;
+											})
+											.map(organizer => {
+												return <li key={organizer.id}>{organizer.name}</li>;
+											})}
+									</ul>
+								</li>
+							);
 						})}
-				</ul>
-			</section>
-
-			<section>
-				<h3>Organizers</h3>
-				<ul>
-					{organizers.map(organizer => {
-						let varloc = false;
-						organizer.spots.forEach(location => {
-							varloc = location.animals.find(loc => animal.name === loc);
-						});
-						return varloc && <li key={organizer.id}>{organizer.name}</li>;
-					})}
 				</ul>
 			</section>
 		</article>

@@ -28,7 +28,7 @@ export default function Home() {
 				animal={{ ...dataStates.animals[0] }}
 				organizers={dataStates.organizers}
 			/>
-			<Organizer organizer={{ ...dataStates.organizers[2] }} />
+			<Organizer organizer={{ ...dataStates.organizers[2] }} animals={dataStates.animals} />
 			<ElementList elements={dataStates.spots} header="Spots" />
 			<ElementList elements={dataStates.animals} header="Animals" />
 			<ElementList elements={dataStates.organizers} header="Organizers" />
