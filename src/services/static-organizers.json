@@ -43,5 +43,18 @@
         "spotsRef": ["Spot5"]
       }
     ]
+  },
+  {
+    "id": "Organizer4",
+    "name": "Divecenter Rostock",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Robbenforschungszentrum",
+        "area": "Ostsee",
+        "animals": ["Animal3"],
+        "spotsRef": ["Spot6"]
+      }
+    ]
   }
 ]

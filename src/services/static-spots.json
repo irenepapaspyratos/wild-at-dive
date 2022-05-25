@@ -33,5 +33,12 @@
     "country": "Australia",
     "geoTag": { "latitude": "-35.231599", "longitude": "136.064987" },
     "description": "nice and warm"
+  },
+  {
+    "id": "Spot6",
+    "name": "Rostock",
+    "country": "Germany",
+    "geoTag": { "latitude": "54.092445", "longitude": "12.128613" },
+    "description": "not very warm"
   }
 ]
