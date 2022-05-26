@@ -47,5 +47,26 @@
     "country": "Portugal",
     "geoTag": { "latitude": "38.000491", "longitude": "-29.303284" },
     "description": "Open water"
+  },
+  {
+    "id": "Spot8",
+    "name": "Hawaii",
+    "country": "USA",
+    "geoTag": { "latitude": "19.593801", "longitude": "-155.42837" },
+    "description": "Sunny and floral"
+  },
+  {
+    "id": "Spot9",
+    "name": "Sipadan",
+    "country": "Malaysia",
+    "geoTag": { "latitude": "4.479224", "longitude": "118.613549" },
+    "description": "Hot"
+  },
+  {
+    "id": "Spot10",
+    "name": "Mauritius",
+    "country": "Mauritius",
+    "geoTag": { "latitude": "-20.275945", "longitude": "57.570357" },
+    "description": "Very green"
   }
 ]

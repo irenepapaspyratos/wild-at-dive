@@ -69,5 +69,44 @@
         "spotsRef": ["Spot7"]
       }
     ]
+  },
+  {
+    "id": "Organizer6",
+    "name": "Fathom Five Divers",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Kauai",
+        "area": "Hawaii",
+        "animals": ["Animal5", "Animal6", "Animal2"],
+        "spotsRef": ["Spot8"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer7",
+    "name": "Quiver Dive Team",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Perhentian Kecil",
+        "area": "Malaysia",
+        "animals": ["Animal6", "Animal7", "Animal2"],
+        "spotsRef": ["Spot9"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer8",
+    "name": "Emperator Dive Center",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Anse la Raie",
+        "area": "Mauritius",
+        "animals": ["Animal6", "Animal7", "Animal2", "Animal5"],
+        "spotsRef": ["Spot10"]
+      }
+    ]
   }
 ]

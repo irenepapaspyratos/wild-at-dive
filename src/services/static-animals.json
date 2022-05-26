@@ -8,7 +8,7 @@
   {
     "id": "Animal2",
     "name": "Shark",
-    "spotsRef": ["Spot2", "Spot3", "Spot4", "Spot5"],
+    "spotsRef": ["Spot2", "Spot3", "Spot4", "Spot5", "Spot8", "Spot9", "Spot10"],
     "description": "despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time.."
   },
   {
@@ -22,5 +22,23 @@
     "name": "Mobula",
     "spotsRef": ["Spot7"],
     "description": "Likes to swim in big groups"
+  },
+  {
+    "id": "Animal5",
+    "name": "Whale",
+    "spotsRef": ["Spot8", "Spot10"],
+    "description": "December-March tend to breed and give birth"
+  },
+  {
+    "id": "Animal6",
+    "name": "Turtle",
+    "spotsRef": ["Spot8", "Spot9", "Spot10"],
+    "description": "Kind and calm swimmers"
+  },
+  {
+    "id": "Animal7",
+    "name": "Ray",
+    "spotsRef": ["Spot7", "Spot9", "Spot10"],
+    "description": "Beware their tail"
   }
 ]
