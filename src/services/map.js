@@ -1,5 +1,5 @@
 import { createWorldTerrain, Viewer } from 'cesium';
-import AddMarkers from './add-markers';
+import addMarkers from './add-markers';
 
 export default function map() {
 	const childNo = document.getElementsByClassName('cesium-viewer');
@@ -9,6 +9,6 @@ export default function map() {
 			terrainProvider: createWorldTerrain(),
 		});
 		viewer.scene.camera.moveBackward(4000000);
-		viewer && AddMarkers(viewer);
+		viewer && addMarkers(viewer);
 	}
 }

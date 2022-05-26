@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 const MapContainer = styled.section`
-	height: 667px;
-	width: 375px;
-	margin: auto;
+	height: 100vh;
+	width: 100vw;
 `;
 
 export default MapContainer;

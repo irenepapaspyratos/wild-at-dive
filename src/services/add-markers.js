@@ -1,7 +1,8 @@
 import { Cartesian3, Color, NearFarScalar } from 'cesium';
 import useStore from '../lib/useStore';
 
-export default function AddMarkers(viewer) {
+export default function addMarkers(viewer) {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const data = useStore(state => state.dataStates);
 
 	data.spots.map(async element => {
@@ -10,9 +11,9 @@ export default function AddMarkers(viewer) {
 				return animal.spotsRef.includes(element.id) && animal.name;
 			})
 			.map(animal => {
-				return `<li key=${animal.id}>${animal.name}</li>`;
+				return `<li>${animal.name}</li>`;
 			});
-		const aList = await animalsList.join('');
+		const animalsListHtml = await animalsList.join('');
 
 		const organizersList = await data.organizers
 			.filter(organizer => {
@@ -22,9 +23,9 @@ export default function AddMarkers(viewer) {
 				return result && organizer;
 			})
 			.map(organizer => {
-				return `<li key=${organizer.id}>${organizer.name}</li>`;
+				return `<li>${organizer.name}</li>`;
 			});
-		const oList = await organizersList.join('');
+		const organizersListHtml = await organizersList.join('');
 
 		viewer.entities.add(
 			{
@@ -47,14 +48,10 @@ export default function AddMarkers(viewer) {
 
 				<section>
 					<h3>Geo-Tag</h3>
-					<div>
 						<h4>Latitude</h4>
 						<p>${element.geoTag.latitude}</p>
-					</div>
-					<div>
 						<h4>Longitude</h4>
 						<p>${element.geoTag.longitude}</p>
-					</div>
 				</section>
 
 				<section>
@@ -65,14 +62,14 @@ export default function AddMarkers(viewer) {
 				<section>
 					<h3>Who lives here?</h3>
 					<ul>
-						${aList}
+						${animalsListHtml}
 					</ul>
 				</section>
 					
 				<section>
 					<h3>Organizers</h3>
 					<ul>
-						${oList}
+						${organizersListHtml}
 					</ul>
 				</section>
 				`,
