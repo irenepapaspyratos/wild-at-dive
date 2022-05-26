@@ -40,5 +40,12 @@
     "country": "Germany",
     "geoTag": { "latitude": "54.092445", "longitude": "12.128613" },
     "description": "not very warm"
+  },
+  {
+    "id": "Spot7",
+    "name": "Princess Alice Bank",
+    "country": "Portugal",
+    "geoTag": { "latitude": "38.000491", "longitude": "-29.303284" },
+    "description": "Open water"
   }
 ]

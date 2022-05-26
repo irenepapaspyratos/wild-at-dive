@@ -56,5 +56,18 @@
         "spotsRef": ["Spot6"]
       }
     ]
+  },
+  {
+    "id": "Organizer5",
+    "name": "Diving Pico",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Princess Alice Bank",
+        "area": "Ilha do Pico, Azores",
+        "animals": ["Animal4"],
+        "spotsRef": ["Spot7"]
+      }
+    ]
   }
 ]

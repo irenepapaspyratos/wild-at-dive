@@ -16,5 +16,11 @@
     "name": "Seal",
     "spotsRef": ["Spot6"],
     "description": "looks sweet, but sharp teeth"
+  },
+  {
+    "id": "Animal4",
+    "name": "Mobula",
+    "spotsRef": ["Spot7"],
+    "description": "Likes to swim in big groups"
   }
 ]
