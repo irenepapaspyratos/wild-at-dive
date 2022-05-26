@@ -6,9 +6,7 @@ export default function Home() {
 	const fetchData = useStore(state => state.fetchData);
 
 	useEffect(() => {
-		fetchData('spots');
-		fetchData('animals');
-		fetchData('organizers');
+		fetchData(['spots', 'animals', 'organizers']);
 	}, [fetchData]);
 
 	return <Map />;
