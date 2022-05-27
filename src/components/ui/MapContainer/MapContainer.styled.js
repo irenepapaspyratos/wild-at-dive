@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const MapContainer = styled.section`
-	height: 50vw;
-	width: 50vw;
+	height: 100vh;
+	width: 100vw;
 `;
 
 export default MapContainer;

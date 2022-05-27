@@ -1,37 +1,72 @@
 [
   {
-    "id": "1",
+    "id": "Spot1",
     "name": "Bimini",
     "country": "Bahamas",
     "geoTag": { "latitude": "25.703188", "longitude": "-79.281459" },
     "description": "nice and warm"
   },
   {
-    "id": "2",
+    "id": "Spot2",
     "name": "Gran Bahama",
     "country": "Bahamas",
     "geoTag": { "latitude": "26.661393", "longitude": "-78.268353" },
     "description": "nice and warm"
   },
   {
-    "id": "3",
+    "id": "Spot3",
     "name": "Galápagos",
     "country": "Ecuador",
     "geoTag": { "latitude": "-0.628815", "longitude": "-90.363875" },
     "description": "nice and warm"
   },
   {
-    "id": "4",
+    "id": "Spot4",
     "name": "Socorro Islands",
     "country": "Mexico",
     "geoTag": { "latitude": "18.792742", "longitude": "-110.982031" },
     "description": "nice and warm"
   },
   {
-    "id": "5",
+    "id": "Spot5",
     "name": "Neptun Islands",
     "country": "Australia",
     "geoTag": { "latitude": "-35.231599", "longitude": "136.064987" },
     "description": "nice and warm"
+  },
+  {
+    "id": "Spot6",
+    "name": "Rostock",
+    "country": "Germany",
+    "geoTag": { "latitude": "54.092445", "longitude": "12.128613" },
+    "description": "not very warm"
+  },
+  {
+    "id": "Spot7",
+    "name": "Princess Alice Bank",
+    "country": "Portugal",
+    "geoTag": { "latitude": "38.000491", "longitude": "-29.303284" },
+    "description": "Open water"
+  },
+  {
+    "id": "Spot8",
+    "name": "Hawaii",
+    "country": "USA",
+    "geoTag": { "latitude": "19.593801", "longitude": "-155.42837" },
+    "description": "Sunny and floral"
+  },
+  {
+    "id": "Spot9",
+    "name": "Sipadan",
+    "country": "Malaysia",
+    "geoTag": { "latitude": "4.479224", "longitude": "118.613549" },
+    "description": "Hot"
+  },
+  {
+    "id": "Spot10",
+    "name": "Mauritius",
+    "country": "Mauritius",
+    "geoTag": { "latitude": "-20.275945", "longitude": "57.570357" },
+    "description": "Very green"
   }
 ]

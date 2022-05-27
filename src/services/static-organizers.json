@@ -1,42 +1,111 @@
 [
   {
-    "id": "1",
+    "id": "Organizer1",
     "name": "Unexso",
     "description": "friendly people, good service",
     "spots": [
       {
         "name": "Freeport",
         "area": "Gran Bahama",
-        "animals": ["Dolphin"]
+        "animals": ["Animal1"],
+        "spotsRef": ["Spot1", "Spot2"]
       }
     ]
   },
   {
-    "id": "2",
+    "id": "Organizer2",
     "name": "Silversea Cruises",
     "description": "friendly people, good service",
     "spots": [
       {
         "name": "San Cristóbal",
         "area": "Galápagos",
-        "animals": ["Dolphin", "Shark"]
+        "animals": ["Animal1", "Animal2"],
+        "spotsRef": ["Spot3"]
       }
     ]
   },
   {
-    "id": "3",
+    "id": "Organizer3",
     "name": "Pacific Fleet",
     "description": "friendly people, good service",
     "spots": [
       {
         "name": "Socorro Islands",
         "area": "Colima, Revillagigedo Archipelago",
-        "animals": ["Shark", "Dolphin"]
+        "animals": ["Animal1", "Animal2"],
+        "spotsRef": ["Spot4"]
       },
       {
         "name": "Neptun Islands",
         "area": "South Australia, Spencer Gulf",
-        "animals": ["Shark"]
+        "animals": ["Animal2"],
+        "spotsRef": ["Spot5"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer4",
+    "name": "Divecenter Rostock",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Robbenforschungszentrum",
+        "area": "Ostsee",
+        "animals": ["Animal3"],
+        "spotsRef": ["Spot6"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer5",
+    "name": "Diving Pico",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Princess Alice Bank",
+        "area": "Ilha do Pico, Azores",
+        "animals": ["Animal4"],
+        "spotsRef": ["Spot7"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer6",
+    "name": "Fathom Five Divers",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Kauai",
+        "area": "Hawaii",
+        "animals": ["Animal5", "Animal6", "Animal2"],
+        "spotsRef": ["Spot8"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer7",
+    "name": "Quiver Dive Team",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Perhentian Kecil",
+        "area": "Malaysia",
+        "animals": ["Animal6", "Animal7", "Animal2"],
+        "spotsRef": ["Spot9"]
+      }
+    ]
+  },
+  {
+    "id": "Organizer8",
+    "name": "Emperator Dive Center",
+    "description": "friendly people, good service",
+    "spots": [
+      {
+        "name": "Anse la Raie",
+        "area": "Mauritius",
+        "animals": ["Animal6", "Animal7", "Animal2", "Animal5"],
+        "spotsRef": ["Spot10"]
       }
     ]
   }

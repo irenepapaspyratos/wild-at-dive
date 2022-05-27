@@ -12,11 +12,11 @@ export default function Spot({ spot, animals, organizers }) {
 				<h3>Geo-Tag</h3>
 				<div>
 					<h4>Latitude</h4>
-					<p>{spot.geoTag.latitude}</p>
+					<p>{spot.geoTag?.latitude}</p>
 				</div>
 				<div>
 					<h4>Longitude</h4>
-					<p>{spot.geoTag.longitude}</p>
+					<p>{spot.geoTag?.longitude}</p>
 				</div>
 			</section>
 
@@ -30,7 +30,7 @@ export default function Spot({ spot, animals, organizers }) {
 				<ul>
 					{animals
 						.filter(animal => {
-							return animal.spots.includes(spot.name) && animal.name;
+							return animal.spotsRef.includes(spot.id) && animal.name;
 						})
 						.map(animal => {
 							return <li key={animal.id}>{animal.name}</li>;
@@ -41,13 +41,16 @@ export default function Spot({ spot, animals, organizers }) {
 			<section>
 				<h3>Organizers</h3>
 				<ul>
-					{organizers.map(organizer => {
-						let varloc = false;
-						organizer.spots.forEach(location => {
-							varloc = location.name === spot.name || location.area === spot.name;
-						});
-						return varloc && <li key={organizer.id}>{organizer.name}</li>;
-					})}
+					{organizers
+						.filter(organizer => {
+							const result = organizer.spots.find(location => {
+								return location.spotsRef.includes(spot.id) && organizer;
+							});
+							return result && organizer;
+						})
+						.map(organizer => {
+							return <li key={organizer.id}>{organizer.name}</li>;
+						})}
 				</ul>
 			</section>
 		</article>
