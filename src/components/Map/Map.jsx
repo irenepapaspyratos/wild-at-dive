@@ -16,7 +16,6 @@ function Map() {
 					terrainProvider: createWorldTerrain(),
 				});
 				viewer.scene.camera.moveBackward(4000000);
-				console.log(viewer);
 				viewer && addMarkers(viewer);
 			}
 		}
