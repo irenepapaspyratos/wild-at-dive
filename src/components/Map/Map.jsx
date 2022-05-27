@@ -1,17 +1,28 @@
 import MapContainer from '../ui/MapContainer/MapContainer.styled';
-import dynamic from 'next/dynamic';
+import { useRef, useEffect } from 'react';
+import { createWorldTerrain, Viewer } from 'cesium';
+import useAddMarkers from '../../lib/hooks/useAddMarkers';
 
 function Map() {
-	const Globe = dynamic(() => import('../../services/map'), {
-		ssr: false,
-	});
+	const addMarkers = useAddMarkers();
+	const cesiumContainerRef = useRef();
 
-	return (
-		<>
-			<MapContainer id="cesiumContainer" />
-			<Globe />
-		</>
-	);
+	useEffect(() => {
+		if (cesiumContainerRef.current) {
+			const childNo = cesiumContainerRef.current.querySelector('.cesium-viewer');
+
+			if (!childNo) {
+				const viewer = new Viewer('cesiumContainer', {
+					terrainProvider: createWorldTerrain(),
+				});
+				viewer.scene.camera.moveBackward(4000000);
+				console.log(viewer);
+				viewer && addMarkers(viewer);
+			}
+		}
+	}, [addMarkers, cesiumContainerRef]);
+
+	return <MapContainer ref={cesiumContainerRef} id="cesiumContainer" />;
 }
 
 export default Map;
