@@ -5,8 +5,8 @@ export default function ElementList({ elements, header }) {
 		<section>
 			<h2>{header}</h2>
 			<ul>
-				{elements.map(element => {
-					return <li key={header + element.id}>{element.name}</li>;
+				{elements?.map(element => {
+					return <li key={element.id}>{element.name}</li>;
 				})}
 			</ul>
 		</section>
