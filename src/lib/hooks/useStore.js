@@ -1,7 +1,8 @@
 import create from 'zustand';
-import getStaticData from '../services/get-staticData';
+import getStaticData from '../../services/get-staticData';
 
 const useStore = create(set => ({
+	keyArray: ['spots', 'animals', 'organizers'],
 	dataStates: { spots: [], animals: [], organizers: [] },
 	fetchData: async array => {
 		let result = {};
