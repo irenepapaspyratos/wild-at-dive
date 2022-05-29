@@ -1,0 +1,230 @@
+{
+  "spots": [
+    {
+      "id": "Spot1",
+      "name": "Bimini",
+      "country": "Bahamas",
+      "geoTag": { "latitude": "25.703188", "longitude": "-79.281459" },
+      "description": "nice and warm"
+    },
+    {
+      "id": "Spot2",
+      "name": "Gran Bahama",
+      "country": "Bahamas",
+      "geoTag": { "latitude": "26.661393", "longitude": "-78.268353" },
+      "description": "nice and warm"
+    },
+    {
+      "id": "Spot3",
+      "name": "Galápagos",
+      "country": "Ecuador",
+      "geoTag": { "latitude": "-0.628815", "longitude": "-90.363875" },
+      "description": "nice and warm"
+    },
+    {
+      "id": "Spot4",
+      "name": "Socorro Islands",
+      "country": "Mexico",
+      "geoTag": { "latitude": "18.792742", "longitude": "-110.982031" },
+      "description": "nice and warm"
+    },
+    {
+      "id": "Spot5",
+      "name": "Neptun Islands",
+      "country": "Australia",
+      "geoTag": { "latitude": "-35.231599", "longitude": "136.064987" },
+      "description": "nice and warm"
+    },
+    {
+      "id": "Spot6",
+      "name": "Rostock",
+      "country": "Germany",
+      "geoTag": { "latitude": "54.092445", "longitude": "12.128613" },
+      "description": "not very warm"
+    },
+    {
+      "id": "Spot7",
+      "name": "Princess Alice Bank",
+      "country": "Portugal",
+      "geoTag": { "latitude": "38.000491", "longitude": "-29.303284" },
+      "description": "Open water"
+    },
+    {
+      "id": "Spot8",
+      "name": "Hawaii",
+      "country": "USA",
+      "geoTag": { "latitude": "19.593801", "longitude": "-155.42837" },
+      "description": "Sunny and floral"
+    },
+    {
+      "id": "Spot9",
+      "name": "Sipadan",
+      "country": "Malaysia",
+      "geoTag": { "latitude": "4.479224", "longitude": "118.613549" },
+      "description": "Hot"
+    },
+    {
+      "id": "Spot10",
+      "name": "Mauritius",
+      "country": "Mauritius",
+      "geoTag": { "latitude": "-20.275945", "longitude": "57.570357" },
+      "description": "Very green"
+    }
+  ],
+  "animals": [
+    {
+      "id": "Animal1",
+      "name": "Dolphin",
+      "spotsRef": ["Spot1", "Spot2", "Spot3", "Spot4"],
+      "description": "friendly, very intelligent, likes to play"
+    },
+    {
+      "id": "Animal2",
+      "name": "Shark",
+      "spotsRef": ["Spot2", "Spot3", "Spot4", "Spot5", "Spot8", "Spot9", "Spot10"],
+      "description": "despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time.."
+    },
+    {
+      "id": "Animal3",
+      "name": "Seal",
+      "spotsRef": ["Spot6"],
+      "description": "looks sweet, but sharp teeth"
+    },
+    {
+      "id": "Animal4",
+      "name": "Mobula",
+      "spotsRef": ["Spot7"],
+      "description": "Likes to swim in big groups"
+    },
+    {
+      "id": "Animal5",
+      "name": "Whale",
+      "spotsRef": ["Spot8", "Spot10"],
+      "description": "December-March tend to breed and give birth"
+    },
+    {
+      "id": "Animal6",
+      "name": "Turtle",
+      "spotsRef": ["Spot8", "Spot9", "Spot10"],
+      "description": "Kind and calm swimmers"
+    },
+    {
+      "id": "Animal7",
+      "name": "Ray",
+      "spotsRef": ["Spot7", "Spot9", "Spot10"],
+      "description": "Beware their tail"
+    }
+  ],
+  "organizers": [
+    {
+      "id": "Organizer1",
+      "name": "Unexso",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Freeport",
+          "area": "Gran Bahama",
+          "animals": ["Animal1"],
+          "spotsRef": ["Spot1", "Spot2"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer2",
+      "name": "Silversea Cruises",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "San Cristóbal",
+          "area": "Galápagos",
+          "animals": ["Animal1", "Animal2"],
+          "spotsRef": ["Spot3"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer3",
+      "name": "Pacific Fleet",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Socorro Islands",
+          "area": "Colima, Revillagigedo Archipelago",
+          "animals": ["Animal1", "Animal2"],
+          "spotsRef": ["Spot4"]
+        },
+        {
+          "name": "Neptun Islands",
+          "area": "South Australia, Spencer Gulf",
+          "animals": ["Animal2"],
+          "spotsRef": ["Spot5"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer4",
+      "name": "Divecenter Rostock",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Robbenforschungszentrum",
+          "area": "Ostsee",
+          "animals": ["Animal3"],
+          "spotsRef": ["Spot6"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer5",
+      "name": "Diving Pico",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Princess Alice Bank",
+          "area": "Ilha do Pico, Azores",
+          "animals": ["Animal4"],
+          "spotsRef": ["Spot7"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer6",
+      "name": "Fathom Five Divers",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Kauai",
+          "area": "Hawaii",
+          "animals": ["Animal5", "Animal6", "Animal2"],
+          "spotsRef": ["Spot8"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer7",
+      "name": "Quiver Dive Team",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Perhentian Kecil",
+          "area": "Malaysia",
+          "animals": ["Animal6", "Animal7", "Animal2"],
+          "spotsRef": ["Spot9"]
+        }
+      ]
+    },
+    {
+      "id": "Organizer8",
+      "name": "Emperator Dive Center",
+      "description": "friendly people, good service",
+      "spots": [
+        {
+          "name": "Anse la Raie",
+          "area": "Mauritius",
+          "animals": ["Animal6", "Animal7", "Animal2", "Animal5"],
+          "spotsRef": ["Spot10"]
+        }
+      ]
+    }
+  ]
+}
