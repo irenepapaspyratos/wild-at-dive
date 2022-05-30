@@ -1,179 +1,21 @@
 import Spot from './Spot';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import data from '../../services/static-testData.json';
 
 describe('Single Spot-Display', () => {
 	it('renders every important detail of spot', () => {
 		render(
 			<Spot
-				spot={{
-					id: '2',
-					name: 'Gran Bahama',
-					country: 'Bahamas',
-					geoTag: { latitude: '26.661393', longitude: '-78.268353' },
-					description: 'nice and warm',
-				}}
-				animals={[
-					{
-						id: '1',
-						name: 'Dolphin',
-						spots: ['Gran Bahama', 'Bimini', 'Galápagos'],
-						description: 'friendly, very intelligent, likes to play',
-					},
-					{
-						id: '2',
-						name: 'Shark',
-						spots: ['Galápagos', 'Socorro Islands'],
-						description:
-							'despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time..',
-					},
-				]}
-				organizers={[
-					{
-						id: '1',
-						name: 'Unexso',
-						spots: [
-							{
-								name: 'Freeport',
-								area: 'Gran Bahama',
-								animals: ['Dolphin'],
-							},
-						],
-					},
-					{
-						id: '2',
-						name: 'Silversea Cruises',
-						spots: [
-							{
-								name: 'San Cristóbal',
-								area: 'Galápagos',
-								animals: ['Dolphin', 'Shark'],
-							},
-							{
-								name: 'Socorro Islands',
-								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
-							},
-						],
-					},
-					{
-						id: '3',
-						name: 'Pacific Fleet',
-						spots: [
-							{
-								name: 'Socorro Islands',
-								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
-							},
-							{
-								name: 'Neptun Islands',
-								area: 'South Australia, Spencer Gulf',
-								animals: ['Shark'],
-							},
-							{
-								name: 'Freeport',
-								area: 'Gran Bahama',
-								animals: ['Dolphin'],
-							},
-						],
-					},
-				]}
-			/>
-		);
-
-		const spotDetail1 = screen.queryByText(/Gran Bahama/i);
-		const spotDetail2 = screen.queryByText(/Bahamas/i);
-		const spotDetail3 = screen.queryByText(/26.661393/i);
-		const spotDetail4 = screen.queryByText(/-78.268353/i);
-		const spotDetail5 = screen.queryByText(/nice and warm/i);
-
-		expect(spotDetail1).toBeInTheDocument();
-		expect(spotDetail2).toBeInTheDocument();
-		expect(spotDetail3).toBeInTheDocument();
-		expect(spotDetail4).toBeInTheDocument();
-		expect(spotDetail5).toBeInTheDocument();
-	});
-
-	it('renders only names of animals living there', () => {
-		render(
-			<Spot
-				spot={{
-					id: '2',
-					name: 'Gran Bahama',
-					country: 'Bahamas',
-					geoTag: { latitude: '26.661393', longitude: '-78.268353' },
-					description: 'nice and warm',
-				}}
-				animals={[
-					{
-						id: '1',
-						name: 'Dolphin',
-						spots: ['Gran Bahama', 'Bimini', 'Galápagos'],
-						description: 'friendly, very intelligent, likes to play',
-					},
-					{
-						id: '2',
-						name: 'Shark',
-						spots: ['Galápagos', 'Socorro Islands'],
-						description:
-							'despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time..',
-					},
-				]}
-				organizers={[
-					{
-						id: '1',
-						name: 'Unexso',
-						spots: [
-							{
-								name: 'Freeport',
-								area: 'Gran Bahama',
-								animals: ['Dolphin'],
-							},
-						],
-					},
-					{
-						id: '2',
-						name: 'Silversea Cruises',
-						spots: [
-							{
-								name: 'San Cristóbal',
-								area: 'Galápagos',
-								animals: ['Dolphin', 'Shark'],
-							},
-							{
-								name: 'Socorro Islands',
-								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
-							},
-						],
-					},
-					{
-						id: '3',
-						name: 'Pacific Fleet',
-						spots: [
-							{
-								name: 'Socorro Islands',
-								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
-							},
-							{
-								name: 'Neptun Islands',
-								area: 'South Australia, Spencer Gulf',
-								animals: ['Shark'],
-							},
-							{
-								name: 'Freeport',
-								area: 'Gran Bahama',
-								animals: ['Dolphin'],
-							},
-						],
-					},
-				]}
+				index={1}
+				spots={data.spots}
+				animals={data.animals}
+				organizers={data.organizers}
 			/>
 		);
 
 		const nameAnimal1 = screen.queryByText(/Dolphin/i);
-		const nameAnimal2 = screen.queryByText(/Shark/i);
+		const nameAnimal2 = screen.queryByText(/Turtle/i);
 
 		expect(nameAnimal1).toBeInTheDocument();
 		expect(nameAnimal2).not.toBeInTheDocument();
@@ -182,78 +24,10 @@ describe('Single Spot-Display', () => {
 	it('renders only names of organizers at this location', () => {
 		render(
 			<Spot
-				spot={{
-					id: '2',
-					name: 'Gran Bahama',
-					country: 'Bahamas',
-					geoTag: { latitude: '26.661393', longitude: '-78.268353' },
-					description: 'nice and warm',
-				}}
-				animals={[
-					{
-						id: '1',
-						name: 'Dolphin',
-						spots: ['Gran Bahama', 'Bimini', 'Galápagos'],
-						description: 'friendly, very intelligent, likes to play',
-					},
-					{
-						id: '2',
-						name: 'Shark',
-						spots: ['Galápagos', 'Socorro Islands'],
-						description:
-							'despite of persistent rumors, sharks are NOT aggressiv, but maybe a bit hungry from time to time..',
-					},
-				]}
-				organizers={[
-					{
-						id: '1',
-						name: 'Unexso',
-						spots: [
-							{
-								name: 'Freeport',
-								area: 'Gran Bahama',
-								animals: ['Dolphin'],
-							},
-						],
-					},
-					{
-						id: '2',
-						name: 'Silversea Cruises',
-						spots: [
-							{
-								name: 'San Cristóbal',
-								area: 'Galápagos',
-								animals: ['Dolphin', 'Shark'],
-							},
-							{
-								name: 'Socorro Islands',
-								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
-							},
-						],
-					},
-					{
-						id: '3',
-						name: 'Pacific Fleet',
-						spots: [
-							{
-								name: 'Socorro Islands',
-								area: 'Colima, Revillagigedo Archipelago',
-								animals: ['Shark, Dolphin'],
-							},
-							{
-								name: 'Neptun Islands',
-								area: 'South Australia, Spencer Gulf',
-								animals: ['Shark'],
-							},
-							{
-								name: 'Freeport',
-								area: 'Gran Bahama',
-								animals: ['Dolphin'],
-							},
-						],
-					},
-				]}
+				index={1}
+				spots={data.spots}
+				animals={data.animals}
+				organizers={data.organizers}
 			/>
 		);
 
@@ -263,6 +37,6 @@ describe('Single Spot-Display', () => {
 
 		expect(nameOrganizer1).toBeInTheDocument();
 		expect(nameOrganizer2).not.toBeInTheDocument();
-		expect(nameOrganizer3).toBeInTheDocument();
+		expect(nameOrganizer3).not.toBeInTheDocument();
 	});
 });

@@ -14,6 +14,13 @@ const GlobalStyle = createGlobalStyle`
     .cesium-infoBox-title {
         color: white;
     }
+
+    a {
+        color: blue;
+        font-weight: bold;
+        font-size: x-large;
+        margin: 1rem;
+    }
 `;
 
 export default GlobalStyle;

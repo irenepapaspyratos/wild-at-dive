@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types';
 
-export default function Organizer({ organizer, animals }) {
+export default function Organizer({ index, animals, organizers }) {
+	const organizer = organizers[index];
+
+	const findAnimals = spotToCheck => {
+		const animalArray = spotToCheck.animals.map(animalId => {
+			return animals.find(animal => animal.id === animalId);
+		});
+		return animalArray;
+	};
+
 	return (
 		<article>
 			<header>
@@ -15,18 +24,14 @@ export default function Organizer({ organizer, animals }) {
 			<section>
 				<h3>Where to find:</h3>
 				<ul>
-					{organizer.spots?.map(location => {
-						const locname = location.name;
+					{organizer.spots.map(spot => {
 						return (
-							<li key={location.name}>
-								<h4>{locname}</h4>
+							<li key={spot.name}>
+								<h4>{spot.name}</h4>
 								<h5>Friends to meet:</h5>
 								<ul>
-									{location.animals.map(animalRef => {
-										const animalLoc = animals.find(animal => {
-											return animalRef === animal.id && animal;
-										});
-										return <li key={animalLoc.id}>{animalLoc.name}</li>;
+									{findAnimals(spot).map(animal => {
+										return <li key={animal.id}>{animal.name}</li>;
 									})}
 								</ul>
 							</li>
@@ -39,6 +44,8 @@ export default function Organizer({ organizer, animals }) {
 }
 
 Organizer.propTypes = {
-	organizer: PropTypes.object,
+	index: PropTypes.number,
+	spots: PropTypes.array,
 	animals: PropTypes.array,
+	organizers: PropTypes.array,
 };

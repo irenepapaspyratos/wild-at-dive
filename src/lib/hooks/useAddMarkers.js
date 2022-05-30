@@ -1,5 +1,5 @@
 import { Cartesian3, Color, NearFarScalar } from 'cesium';
-import useStore from '../useStore';
+import useStore from './useStore';
 
 export default function useAddMarkers() {
 	const data = useStore(state => state.dataStates);

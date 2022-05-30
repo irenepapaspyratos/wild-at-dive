@@ -1,32 +1,16 @@
 import Organizer from './Organizer';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import data from '../../services/static-testData.json';
 
 describe('Single Organizer-Display', () => {
 	it('renders name. location-names and animal-names of organizer', () => {
 		render(
 			<Organizer
-				organizer={{
-					id: '3',
-					name: 'Pacific Fleet',
-					spots: [
-						{
-							name: 'Socorro Islands',
-							area: 'Colima, Revillagigedo Archipelago',
-							animals: ['Dolphin', 'Shark'],
-						},
-						{
-							name: 'Neptun Islands',
-							area: 'South Australia, Spencer Gulf',
-							animals: ['Shark'],
-						},
-						{
-							name: 'Freeport',
-							area: 'Gran Bahama',
-							animals: ['Dolphin'],
-						},
-					],
-				}}
+				index={2}
+				spots={data.spots}
+				animals={data.animals}
+				organizers={data.organizers}
 			/>
 		);
 
@@ -34,16 +18,18 @@ describe('Single Organizer-Display', () => {
 
 		const nameSpot1 = screen.getByRole('heading', { name: 'Socorro Islands' });
 		const nameSpot2 = screen.getByRole('heading', { name: 'Neptun Islands' });
-		const nameSpot3 = screen.getByRole('heading', { name: 'Freeport' });
+		const nameSpot3 = screen.queryByText(/Freeport/i);
 
 		const nameAnimal1 = screen.getAllByText(/Dolphin/i);
 		const nameAnimal2 = screen.getAllByText(/Shark/i);
+		const nameAnimal3 = screen.queryByText(/Ray/i);
 
 		expect(nameOrganizer).toBeInTheDocument();
 		expect(nameSpot1).toBeInTheDocument();
 		expect(nameSpot2).toBeInTheDocument();
-		expect(nameSpot3).toBeInTheDocument();
-		expect(nameAnimal1.length).toBe(2);
+		expect(nameSpot3).not.toBeInTheDocument();
+		expect(nameAnimal1.length).toBe(1);
 		expect(nameAnimal2.length).toBe(2);
+		expect(nameAnimal3).not.toBeInTheDocument();
 	});
 });

@@ -1,4 +1,5 @@
 import Organizer from './Organizer';
+import data from '../../services/static-testData.json';
 
 export default {
 	title: 'Components/Organizer',
@@ -15,23 +16,10 @@ export default {
 };
 
 const props = {
-	organizer: {
-		id: '3',
-		name: 'Pacific Fleet',
-		description: 'friendly people, good service',
-		spots: [
-			{
-				name: 'Socorro Islands',
-				area: 'Colima, Revillagigedo Archipelago',
-				animals: ['Shark', 'Dolphin'],
-			},
-			{
-				name: 'Neptun Islands',
-				area: 'South Australia, Spencer Gulf',
-				animals: ['Shark'],
-			},
-		],
-	},
+	index: 1,
+	spots: data.spots,
+	animals: data.animals,
+	organizers: data.organizers,
 };
 
 export function Default() {
