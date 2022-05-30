@@ -1,8 +1,7 @@
 import useStore from '../../../src/lib/hooks/useStore';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import urlAdjustLight from '../../../src/services/url-adjust-light';
-import RenderIf from '../../../src/components/Global/RenderIf';
+import sluggify from '../../../src/services/sluggify';
 import Spot from '../../../src/components/Spot/Spot';
 import Animal from '../../../src/components/Animal/Animal';
 import Organizer from '../../../src/components/Organizer/Organizer';
@@ -16,7 +15,7 @@ export default function SingleListEntry() {
 	const keyS = `${key}s`;
 
 	const indexFound = data[keyS]?.findIndex(element => {
-		return urlAdjustLight(element.name) === router.query.name && element.id;
+		return sluggify(element.name) === router.query.name && element.id;
 	});
 
 	useEffect(() => {
@@ -25,32 +24,30 @@ export default function SingleListEntry() {
 
 	return (
 		<>
-			<RenderIf isTrue={key === 'spot'}>
+			{key === 'spot' && (
 				<Spot
 					index={indexFound}
 					spots={data.spots}
 					animals={data.animals}
 					organizers={data.organizers}
 				/>
-			</RenderIf>
-
-			<RenderIf isTrue={key === 'animal'}>
+			)}
+			{key === 'animal' && (
 				<Animal
 					index={indexFound}
 					spots={data.spots}
 					animals={data.animals}
 					organizers={data.organizers}
 				/>
-			</RenderIf>
-
-			<RenderIf isTrue={key === 'organizer'}>
+			)}
+			{key === 'organizer' && (
 				<Organizer
 					index={indexFound}
 					spots={data.spots}
 					animals={data.animals}
 					organizers={data.organizers}
 				/>
-			</RenderIf>
+			)}
 		</>
 	);
 }

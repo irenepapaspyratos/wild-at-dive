@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import urlAdjustLight from '../../../src/services/url-adjust-light';
+import sluggify from '../../services/sluggify';
 
 export default function ElementList({ elements, header }) {
 	const displayHeader = header.substr(0, 1).toUpperCase() + header.substr(1);
@@ -16,8 +16,8 @@ export default function ElementList({ elements, header }) {
 							<li key={element.id}>
 								<Link
 									href={{
-										pathname: `/list/${urlPart}/[slug]`,
-										query: { slug: urlAdjustLight(element.name) },
+										pathname: `/list/[key]/[name]`,
+										query: { key: urlPart, name: sluggify(element.name) },
 									}}
 								>
 									<a>{element.name}</a>

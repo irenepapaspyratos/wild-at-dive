@@ -8,25 +8,25 @@ export default function Spot({ index, spots, animals, organizers }) {
 	return (
 		<article>
 			<header>
-				<h2>{spot?.name}</h2>
-				<p>{spot?.country}</p>
+				<h2>{spot.name}</h2>
+				<p>{spot.country}</p>
 			</header>
 
 			<section>
 				<h3>Geo-Tag</h3>
 				<div>
 					<h4>Latitude</h4>
-					<p>{spot?.geoTag?.latitude}</p>
+					<p>{spot.geoTag.latitude}</p>
 				</div>
 				<div>
 					<h4>Longitude</h4>
-					<p>{spot?.geoTag?.longitude}</p>
+					<p>{spot.geoTag.longitude}</p>
 				</div>
 			</section>
 
 			<section>
 				<h3>Description</h3>
-				<p>{spot?.description}</p>
+				<p>{spot.description}</p>
 			</section>
 
 			<section>

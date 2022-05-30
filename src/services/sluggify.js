@@ -1,3 +1,3 @@
-export default function urlAdjustLight(string) {
+export default function sluggify(string) {
 	return string.toLowerCase().replace(' ', '-');
 }

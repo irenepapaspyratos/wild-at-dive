@@ -1,10 +1,10 @@
-export default function getStaticQueries(string, queryElement, queryArrayA, queryArrayB) {
+export default function getStaticQueries(identifier, queryElement, queryArrayA, queryArrayB) {
 	// Order: spot - animal - organizer
 
 	let resultArrayA = [];
 	let resultArrayB = [];
 
-	switch (string) {
+	switch (identifier) {
 		case 'spot': {
 			resultArrayA = queryArrayA
 				.filter(animal => {

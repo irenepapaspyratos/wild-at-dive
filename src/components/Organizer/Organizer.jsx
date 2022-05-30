@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line no-unused-vars
-export default function Organizer({ index, spots, animals, organizers }) {
+export default function Organizer({ index, animals, organizers }) {
 	const organizer = organizers[index];
 
 	const findAnimals = spotToCheck => {
@@ -14,18 +13,18 @@ export default function Organizer({ index, spots, animals, organizers }) {
 	return (
 		<article>
 			<header>
-				<h2>{organizer?.name}</h2>
+				<h2>{organizer.name}</h2>
 			</header>
 
 			<section>
 				<h3>Description</h3>
-				<p>{organizer?.description}</p>
+				<p>{organizer.description}</p>
 			</section>
 
 			<section>
 				<h3>Where to find:</h3>
 				<ul>
-					{organizer?.spots.map(spot => {
+					{organizer.spots.map(spot => {
 						return (
 							<li key={spot.name}>
 								<h4>{spot.name}</h4>

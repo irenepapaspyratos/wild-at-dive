@@ -14,12 +14,12 @@ export default function Animal({ index, spots, animals, organizers }) {
 	return (
 		<article>
 			<header>
-				<h2>{animal?.name}</h2>
+				<h2>{animal.name}</h2>
 			</header>
 
 			<section>
 				<h3>Description</h3>
-				<p>{animal?.description}</p>
+				<p>{animal.description}</p>
 			</section>
 
 			<section>
