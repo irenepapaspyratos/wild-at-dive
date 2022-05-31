@@ -17,7 +17,11 @@ function Map() {
 				});
 				viewer.scene.camera.moveBackward(4000000);
 				viewer && addMarkers(viewer);
-				viewer.infoBox.frame.removeAttribute('sandbox');
+				viewer.infoBox.frame.setAttribute(
+					'sandbox',
+					'allow-same-origin allow-popups allow-forms allow-top-navigation allow-top-navigation-by-user-activation'
+				);
+				viewer.infoBox.frame.contentWindow.location.reload();
 			}
 		}
 	}, [addMarkers, cesiumContainerRef]);
