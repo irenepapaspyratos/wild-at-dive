@@ -17,6 +17,7 @@ function Map() {
 				});
 				viewer.scene.camera.moveBackward(4000000);
 				viewer && addMarkers(viewer);
+				viewer.infoBox.frame.removeAttribute('sandbox');
 			}
 		}
 	}, [addMarkers, cesiumContainerRef]);

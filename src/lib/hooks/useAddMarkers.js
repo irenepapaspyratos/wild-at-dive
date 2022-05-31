@@ -1,5 +1,6 @@
 import { Cartesian3, Color, NearFarScalar } from 'cesium';
 import useStore from './useStore';
+import sluggify from '../../services/sluggify';
 
 export default function useAddMarkers() {
 	const data = useStore(state => state.dataStates);
@@ -11,7 +12,9 @@ export default function useAddMarkers() {
 					return animal.spotsRef.includes(element.id) && animal.name;
 				})
 				.map(animal => {
-					return `<li>${animal.name}</li>`;
+					return `<li><a href="/list/animal/${sluggify(animal.name)}" target="_top">${
+						animal.name
+					}</a></li>`;
 				});
 			const animalsListHtml = await animalsList.join('');
 
@@ -23,7 +26,9 @@ export default function useAddMarkers() {
 					return result && organizer;
 				})
 				.map(organizer => {
-					return `<li>${organizer.name}</li>`;
+					return `<li><a href="/list/organizer/${sluggify(
+						organizer.name
+					)}" target="_parent">${organizer.name}</a></li>`;
 				});
 			const organizersListHtml = await organizersList.join('');
 
