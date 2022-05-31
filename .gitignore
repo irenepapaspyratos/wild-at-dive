@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 uselater
+test.html
 
 # debug
 npm-debug.log*
