@@ -7,30 +7,30 @@ export default function useAddMarkers() {
 
 	return function addMarkers(viewer) {
 		data.spots.map(async element => {
-			const animalsList = await data.animals
-				.filter(animal => {
-					return animal.spotsRef.includes(element.id) && animal.name;
-				})
-				.map(animal => {
-					return `<li><a href="/list/animal/${sluggify(animal.name)}" target="_top">${
-						animal.name
-					}</a></li>`;
-				});
-			const animalsListHtml = await animalsList.join('');
+			const animalsList = data.animals
+				.filter(animal => animal.spotsRef.includes(element.id) && animal.name)
+				.map(
+					animal =>
+						`<li><a href="/list/animal/${sluggify(animal.name)}" target="_top">${
+							animal.name
+						}</a></li>`
+				);
+			const animalsListHtml = animalsList.join('');
 
-			const organizersList = await data.organizers
+			const organizersList = data.organizers
 				.filter(organizer => {
-					const result = organizer.spots.find(location => {
-						return location.spotsRef.includes(element.id) && organizer;
-					});
+					const result = organizer.spots.find(
+						location => location.spotsRef.includes(element.id) && organizer
+					);
 					return result && organizer;
 				})
-				.map(organizer => {
-					return `<li><a href="/list/organizer/${sluggify(
-						organizer.name
-					)}" target="_parent">${organizer.name}</a></li>`;
-				});
-			const organizersListHtml = await organizersList.join('');
+				.map(
+					organizer =>
+						`<li><a href="/list/organizer/${sluggify(
+							organizer.name
+						)}" target="_parent">${organizer.name}</a></li>`
+				);
+			const organizersListHtml = organizersList.join('');
 
 			viewer.entities.add(
 				{
