@@ -9,13 +9,37 @@ export default async function handler(req, res) {
 		const data = JSON.parse(req.body);
 		await dbConnect();
 
+		const organizerSpots = [];
+		const organizerAnimals = [];
+		if (data.checkedRefs.spots !== []) {
+			data.checkedRefs.spots.forEach(spot => {
+				const spotId = spot.split('$$')[0];
+				const spotName = spot.split('$$')[1];
+
+				organizerSpots.push({ name: spotName, spotsRef: spotId });
+			});
+
+			if (data.checkedRefs.animals !== []) {
+				data.checkedRefs.animals.forEach(animal => {
+					const spotRef = animal.split('$$')[0];
+					const animalRef = animal.split('$$')[1];
+					organizerAnimals.push(animalRef);
+
+					var index = organizerSpots.findIndex(spot => spot.spotsRef === spotRef);
+					if (index !== -1) {
+						organizerSpots[index].animalsRef = animalRef;
+					}
+				});
+			}
+		}
+
 		const updatedOrganizer = await Organizer.findByIdAndUpdate(
 			id,
 			{
 				name: data.name,
 				url: data.url,
 				description: data.description,
-				spots: data.spots,
+				spots: organizerSpots,
 				address: data.address,
 				email: data.email,
 				phone: data.phone,
@@ -29,13 +53,10 @@ export default async function handler(req, res) {
 			entry: updatedOrganizer,
 		});
 
-		if (data.checkedRefs.animals !== []) {
+		if (organizerAnimals !== []) {
 			const updatedAnimalsAdd = await Animal.updateMany(
 				{
-					$and: [
-						{ _id: { $in: data.checkedRefs.animals } },
-						{ organizersRef: { $nin: id } },
-					],
+					$and: [{ _id: { $in: organizerAnimals } }, { organizersRef: { $nin: id } }],
 				},
 				{
 					$push: { organizersRef: id },
@@ -48,10 +69,7 @@ export default async function handler(req, res) {
 
 			const updatedAnimalsCut = await Animal.updateMany(
 				{
-					$and: [
-						{ _id: { $nin: data.checkedRefs.animals } },
-						{ organizersRef: { $in: id } },
-					],
+					$and: [{ _id: { $nin: organizerAnimals } }, { organizersRef: { $in: id } }],
 				},
 				{
 					$pull: { organizersRef: id },
@@ -68,7 +86,7 @@ export default async function handler(req, res) {
 			entry: req.body,
 		});
 	} else if (req.method === 'DELETE') {
-		await dbConnect();
+		//await dbConnect();
 
 		const deletedOrganizer = await Organizer.findByIdAndDelete(id);
 		res.status(200).json({

@@ -98,6 +98,32 @@ export default async function handler(req, res) {
 	} else if (req.method === 'DELETE') {
 		await dbConnect();
 
+		const updatedAnimalsCut = await Animal.updateMany(
+			{
+				spotsRef: { $in: id },
+			},
+			{
+				$pull: { spotsRef: id },
+			}
+		);
+		res.status(200).json({
+			message: 'Animals to cut updated',
+			entry: updatedAnimalsCut,
+		});
+
+		const updatedOrganizersCut = await Organizer.updateMany(
+			{
+				spotsRef: { $in: id },
+			},
+			{
+				$pull: { spotsRef: id },
+			}
+		);
+		res.status(200).json({
+			message: 'Organizers to cut updated',
+			entry: updatedOrganizersCut,
+		});
+
 		const deletedSpot = await Spot.findByIdAndDelete(id);
 		res.status(200).json({
 			message: 'Spot deleted',

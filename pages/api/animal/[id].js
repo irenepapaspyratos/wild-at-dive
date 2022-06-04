@@ -67,6 +67,19 @@ export default async function handler(req, res) {
 	} else if (req.method === 'DELETE') {
 		await dbConnect();
 
+		const updatedOrganizersCut = await Organizer.updateMany(
+			{
+				animalsRef: { $in: id },
+			},
+			{
+				$pull: { animalsRef: id },
+			}
+		);
+		res.status(200).json({
+			message: 'Organizers to cut updated',
+			entry: updatedOrganizersCut,
+		});
+
 		const deletedAnimal = await Animal.findByIdAndDelete(id);
 		res.status(200).json({
 			message: 'Animal deleted',
