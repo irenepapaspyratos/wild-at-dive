@@ -3,6 +3,7 @@ import getStaticData from '../../services/get-staticData';
 
 const useStore = create(set => ({
 	keyArray: ['spots', 'animals', 'organizers'],
+
 	dataStates: { spots: [], animals: [], organizers: [] },
 	fetchData: async array => {
 		let result = {};
@@ -13,6 +14,7 @@ const useStore = create(set => ({
 			return { dataStates: { ...state.dataStates, ...result } };
 		});
 	},
+
 	checkedArrays: { spots: [], animals: [], organizers: [] },
 	updateCheckedArraysAdd: (key, element) => {
 		set(state => {
@@ -44,20 +46,3 @@ const useStore = create(set => ({
 }));
 
 export default useStore;
-
-/*		set(state => {
-			const index = state.checkedArrays[key].findIndex(({ id }) => id === element);
-			
-			if (index !== -1) {
-				return {
-					checkedArrays: {
-						...state.checkedArrays,
-						[key]: [
-							...state.checkedArrays[key].slice(0, index),
-							...state.checkedArrays[key].slice(index + 1),
-						],
-					},
-				};
-			}
-		});
-*/

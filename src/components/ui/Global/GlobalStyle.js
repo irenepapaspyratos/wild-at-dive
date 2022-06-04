@@ -21,6 +21,13 @@ const GlobalStyle = createGlobalStyle`
         font-size: x-large;
         margin: 1rem;
     }
+
+    fieldset {
+        margin: 1rem;
+        font-weight: bolder;
+        display: flex;
+        flex-direction: column;
+    }
 `;
 
 export default GlobalStyle;
