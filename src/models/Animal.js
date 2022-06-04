@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import mongoose from 'mongoose';
+import Spot from './Spot';
 
 const animalSchema = new mongoose.Schema({
 	name: String,
