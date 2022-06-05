@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-        color: black
+        color: green;
     }
     
     .cesium-viewer-animationContainer, .cesium-viewer-bottom, .cesium-viewer-timelineContainer, .cesium-viewer-fullscreenContainer {
@@ -20,6 +20,13 @@ const GlobalStyle = createGlobalStyle`
         font-weight: bold;
         font-size: x-large;
         margin: 1rem;
+    }
+
+    fieldset {
+        margin: 1rem;
+        font-weight: bolder;
+        display: flex;
+        flex-direction: column;
     }
 `;
 

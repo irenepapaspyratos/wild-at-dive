@@ -36,7 +36,7 @@ export default function getStaticQueries(identifier, queryElement, queryArrayA, 
 			resultArrayB = queryArrayB
 				.filter(organizer => {
 					const result = organizer.spots.find(location => {
-						return location.animals.includes(queryElement.id) && organizer;
+						return location.animals?.includes(queryElement.id) && organizer;
 					});
 					return result && organizer;
 				})

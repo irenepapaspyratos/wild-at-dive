@@ -19,7 +19,7 @@
 .DS_Store
 *.pem
 uselater
-test.html
+ZData
 
 # debug
 npm-debug.log*

@@ -27,6 +27,7 @@
   "rules": {
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 0,
-    "react/jsx-tag-spacing": [2, { "beforeSelfClosing": "always" }]
+    "react/jsx-tag-spacing": [2, { "beforeSelfClosing": "always" }],
+    "react/jsx-child-element-spacing": 0
   }
 }
