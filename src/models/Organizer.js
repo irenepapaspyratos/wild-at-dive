@@ -14,10 +14,9 @@ const organizerSchema = new mongoose.Schema({
 		{
 			name: String,
 			animalsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Animal' }],
-			spotsRef: { type: mongoose.Schema.Types.ObjectId, ref: 'Spot' },
+			spotsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Spot' }],
 		},
 	],
-
 	wiki: String,
 });
 const Organizer = mongoose.models?.Organizer ?? mongoose.model('Organizer', organizerSchema);

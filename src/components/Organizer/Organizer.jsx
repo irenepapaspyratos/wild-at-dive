@@ -3,13 +3,6 @@ import PropTypes from 'prop-types';
 export default function Organizer({ index, animals, organizers }) {
 	const organizer = organizers[index];
 
-	const findAnimals = spotToCheck => {
-		const animalArray = spotToCheck.animals.map(animalId => {
-			return animals.find(animal => animal.id === animalId);
-		});
-		return animalArray;
-	};
-
 	return (
 		<article>
 			<header>
@@ -30,9 +23,13 @@ export default function Organizer({ index, animals, organizers }) {
 								<h4>{spot.name}</h4>
 								<h5>Friends to meet:</h5>
 								<ul>
-									{findAnimals(spot).map(animal => {
-										return <li key={animal.id}>{animal.name}</li>;
-									})}
+									{animals
+										.filter(animal => {
+											return spot.animalsRef.includes(animal.id) && animal;
+										})
+										.map(animal => (
+											<li key={animal.id}>{animal.name}</li>
+										))}
 								</ul>
 							</li>
 						);

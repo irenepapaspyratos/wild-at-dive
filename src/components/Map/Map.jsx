@@ -1,10 +1,20 @@
 import MapContainer from '../ui/MapContainer/MapContainer.styled';
 import { useRef, useEffect } from 'react';
+import useStore from '../../lib/hooks/useStore';
 import { createWorldTerrain, Viewer } from 'cesium';
 import useAddMarkers from '../../lib/hooks/useAddMarkers';
+import useSWR from 'swr';
 
 function Map() {
-	const addMarkers = useAddMarkers();
+	const keyArray = useStore(state => state.keyArray);
+	const setData = useStore(state => state.setData);
+	const { data: spots, errorSpots } = useSWR('/api/list/spots');
+	const { data: animals, errorAnimals } = useSWR('/api/list/animals');
+	const { data: organizers, errorOrganizers } = useSWR('/api/list/organizers');
+	errorSpots && <h3>Error: {errorSpots.message}</h3>;
+	errorAnimals && <h3>Error: {errorAnimals.message}</h3>;
+	errorOrganizers && <h3>Error: {errorOrganizers.message}</h3>;
+	const addMarkers = useAddMarkers(spots, animals, organizers);
 	const cesiumContainerRef = useRef();
 
 	useEffect(() => {
@@ -26,9 +36,15 @@ function Map() {
 				}, 1000);
 			}
 		}
+		setData(keyArray, [spots, animals, organizers]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [addMarkers, cesiumContainerRef]);
 
-	return <MapContainer ref={cesiumContainerRef} id="cesiumContainer" />;
+	return (
+		<>
+			<MapContainer ref={cesiumContainerRef} id="cesiumContainer" />{' '}
+		</>
+	);
 }
 
 export default Map;

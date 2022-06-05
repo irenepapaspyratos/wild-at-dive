@@ -130,6 +130,7 @@ export default async function handler(req, res) {
 			product: deletedSpot,
 		});
 	} else {
-		res.status(400).json({ error: 'wrong method' });
+		const singleSpot = await Spot.findById(id);
+		res.status(200).json(singleSpot);
 	}
 }

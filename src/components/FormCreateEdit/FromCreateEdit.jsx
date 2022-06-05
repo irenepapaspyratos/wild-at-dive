@@ -26,7 +26,7 @@ const initialState = {
 	],
 };
 
-export default function FormCreateEdit({ creationKey: creationKey }) {
+export default function FormCreateEdit({ creationKey: creationKey, data }) {
 	const router = useRouter();
 	const [creationInput, setCreationInput] = useState(initialState);
 	const checkedArrays = useStore(state => state.checkedArrays);
@@ -51,10 +51,6 @@ export default function FormCreateEdit({ creationKey: creationKey }) {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [router.isReady, creationKey]);
-
-	const keyArray = useStore(state => state.keyArray);
-	const data = useStore(state => state.dataStates);
-	const fetchData = useStore(state => state.fetchData);
 
 	const submit = async event => {
 		event.preventDefault();
@@ -102,10 +98,6 @@ export default function FormCreateEdit({ creationKey: creationKey }) {
 
 		router.push(`/list/${creationKey}/`);
 	};
-
-	useEffect(() => {
-		fetchData(keyArray);
-	}, [fetchData, keyArray, data.animals]);
 
 	return (
 		<form onSubmit={submit}>
@@ -232,12 +224,12 @@ export default function FormCreateEdit({ creationKey: creationKey }) {
 
 					<fieldset>
 						<legend>Friends to meet:</legend>
-						<FieldsetCheckboxes dataKey={keyArray[1]} boxArray={data.animals} />
+						<FieldsetCheckboxes dataKey="spots" boxArray={data.animals} />
 					</fieldset>
 
 					<fieldset>
 						<legend>Organizers:</legend>
-						<FieldsetCheckboxes dataKey={keyArray[2]} boxArray={data.organizers} />
+						<FieldsetCheckboxes dataKey="organizers" boxArray={data.organizers} />
 					</fieldset>
 				</>
 			)}
@@ -303,12 +295,12 @@ export default function FormCreateEdit({ creationKey: creationKey }) {
 
 					<fieldset>
 						<legend>Where to find:</legend>
-						<FieldsetCheckboxes dataKey={keyArray[0]} boxArray={data.spots} />
+						<FieldsetCheckboxes dataKey="spots" boxArray={data.spots} />
 					</fieldset>
 
 					<fieldset>
 						<legend>Organizers:</legend>
-						<FieldsetCheckboxes dataKey={keyArray[2]} boxArray={data.organizers} />
+						<FieldsetCheckboxes dataKey="organizers" boxArray={data.organizers} />
 					</fieldset>
 				</>
 			)}
@@ -429,7 +421,7 @@ export default function FormCreateEdit({ creationKey: creationKey }) {
 					<fieldset>
 						<legend>Diving Spots:</legend>
 						<FieldsetCheckboxes
-							dataKey={keyArray[0]}
+							dataKey="spots"
 							boxArray={data.spots}
 							boxInBoxArray={data.animals}
 						/>

@@ -1,25 +1,25 @@
-import useStore from '../../src/lib/hooks/useStore';
-import { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import getDbData from '../../src/services/get-dbData';
 import { useRouter } from 'next/router';
 import FormCreateEdit from '../../src/components/FormCreateEdit/FromCreateEdit';
 
-export default function CreateEntry() {
+export async function getServerSideProps() {
+	const dataObject = await getDbData();
+	const { spots, animals, organizers } = dataObject;
+	return {
+		props: { spots, animals, organizers },
+	};
+}
+
+export default function CreateEntry({ spots, animals, organizers }) {
+	const data = { spots: spots, animals: animals, organizers: organizers };
 	const router = useRouter();
-	const keyArray = useStore(state => state.keyArray);
-	const data = useStore(state => state.dataStates);
-	const fetchData = useStore(state => state.fetchData);
 	const key = router.query.key;
 
-	useEffect(() => {
-		fetchData(keyArray);
-	}, [fetchData, keyArray]);
-
-	return (
-		<FormCreateEdit
-			creationKey={key}
-			spots={data.spots}
-			animals={data.animals}
-			organizers={data.organizers}
-		/>
-	);
+	return <FormCreateEdit creationKey={key} data={data} />;
 }
+CreateEntry.propTypes = {
+	spots: PropTypes.array,
+	animals: PropTypes.array,
+	organizers: PropTypes.array,
+};

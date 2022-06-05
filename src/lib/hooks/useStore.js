@@ -1,14 +1,14 @@
 import create from 'zustand';
-import getStaticData from '../../services/get-staticData';
 
 const useStore = create(set => ({
 	keyArray: ['spots', 'animals', 'organizers'],
 
 	dataStates: { spots: [], animals: [], organizers: [] },
-	fetchData: async array => {
+	setData: async (keyArray, array) => {
 		let result = {};
-		await array.forEach(key => {
-			result = { ...result, [key]: getStaticData(key) };
+		await keyArray.forEach(key => {
+			const index = keyArray.indexOf(key);
+			result = { ...result, [keyArray[index]]: array[index] };
 		});
 		set(state => {
 			return { dataStates: { ...state.dataStates, ...result } };
