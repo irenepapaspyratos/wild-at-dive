@@ -81,9 +81,9 @@ export default function FieldsetCheckboxes({ dataKey, boxArray, boxInBoxArray })
 						value={element.id}
 						onChange={event => {
 							if (event.target.checked) {
-								updateCheckedArraysAdd(dataKey, event.target.value);
+								updateCheckedArraysAdd(dataKey, event.target.value.toString());
 							} else {
-								updateCheckedArraysCut(dataKey, event.target.value);
+								updateCheckedArraysCut(dataKey, event.target.value.toString());
 							}
 						}}
 					/>

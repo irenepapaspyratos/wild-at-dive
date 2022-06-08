@@ -16,6 +16,12 @@ const useStore = create(set => ({
 	},
 
 	checkedArrays: { spots: [], animals: [], organizers: [] },
+	resetCheckedArrays: () => {
+		const res = { spots: [], animals: [], organizers: [] };
+		set(state => {
+			return { checkedArrays: { ...state.checkedArrays, ...res } };
+		});
+	},
 	updateCheckedArraysAdd: (key, element) => {
 		set(state => {
 			return {

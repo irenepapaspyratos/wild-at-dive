@@ -4,7 +4,7 @@ import Spot from './Spot';
 
 const animalSchema = new mongoose.Schema({
 	name: String,
-	spotsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Spot' }],
+	spotsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Spot', unique: true }],
 	description: String,
 	wiki: String,
 });

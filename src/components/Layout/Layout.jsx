@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
-import Navigation from '../Navigation/Navigation';
 import Container from '../ui/Container/Container.styled';
+import Navigation from '../Navigation/Navigation';
+import Background from '../ui/Background/Background.styled';
 
 export default function Layout({ children }) {
 	return (
 		<>
-			<Container>{children}</Container>
-			<Navigation />
+			<Background />
+			<Container>
+				<div>{children}</div>
+				<Navigation />
+			</Container>
 		</>
 	);
 }
