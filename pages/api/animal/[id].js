@@ -9,11 +9,36 @@ export default async function handler(req, res) {
 		const data = JSON.parse(req.body);
 		await dbConnect();
 
+		if (data.newId) {
+			if (data.checkedRefs.organizers !== []) {
+				const updatedOrganizers = await Organizer.updateMany(
+					{ id: { $in: data.checkedRefs.organizers } },
+					{
+						$push: { 'spots.$[element].animalsRef': id },
+					},
+					{
+						arrayFilters: [
+							{
+								'element.spotsRef': {
+									$in: data.checkedRefs.spots,
+								},
+							},
+						],
+					}
+				);
+				res.status(200).json({
+					message: 'New Animal added to Organizer',
+					entry: updatedOrganizers,
+				});
+			}
+		}
+
+		/*
 		const updatedAnimal = await Animal.findByIdAndUpdate(
 			id,
 			{
 				name: data.name,
-				spotsRef: data.spotsRef,
+				spotsRef: data.checkedRefs.spots,
 				description: data.description,
 				wiki: data.wiki,
 			},
@@ -64,26 +89,21 @@ export default async function handler(req, res) {
 			message: 'Something went wrong',
 			entry: req.body,
 		});
+		*/
 	} else if (req.method === 'DELETE') {
 		await dbConnect();
 
 		const updatedOrganizersCut = await Organizer.updateMany(
+			{ 'spots.$[element].animalsRef': id },
 			{
-				animalsRef: { $in: id },
-			},
-			{
-				$pull: { animalsRef: id },
+				$pull: { 'spots.$[element].animalsRef': id },
 			}
 		);
-		res.status(200).json({
-			message: 'Organizers to cut updated',
-			entry: updatedOrganizersCut,
-		});
 
 		const deletedAnimal = await Animal.findByIdAndDelete(id);
 		res.status(200).json({
 			message: 'Animal deleted',
-			product: deletedAnimal,
+			deletedEntry: [deletedAnimal, updatedOrganizersCut],
 		});
 	} else {
 		res.status(400).json({ error: 'wrong method' });

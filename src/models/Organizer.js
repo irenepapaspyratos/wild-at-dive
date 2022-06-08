@@ -13,8 +13,8 @@ const organizerSchema = new mongoose.Schema({
 	spots: [
 		{
 			name: String,
-			animalsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Animal' }],
-			spotsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Spot' }],
+			animalsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Animal', unique: true }],
+			spotsRef: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Spot', unique: true }],
 		},
 	],
 	wiki: String,

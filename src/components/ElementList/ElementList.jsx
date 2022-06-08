@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import ListSection from '../ui/ListSection/ListSection.styled';
 import sluggify from '../../services/sluggify';
 import useSWR from 'swr';
+import IconSvg from '../IconSvg/IconSvg';
 
 export default function ElementList({ identifier }) {
 	const displayHeader = identifier.substr(0, 1).toUpperCase() + identifier.substr(1);
@@ -10,9 +12,11 @@ export default function ElementList({ identifier }) {
 	errorData && <h3>Error: {errorData.message}</h3>;
 
 	return (
-		<section>
+		<ListSection>
 			<details>
-				<summary>{displayHeader}</summary>
+				<summary>
+					<h1>{displayHeader}</h1>
+				</summary>
 				<ul>
 					{data ? (
 						data.map(element => {
@@ -28,7 +32,16 @@ export default function ElementList({ identifier }) {
 											},
 										}}
 									>
-										<a>{element.name}</a>
+										<a position="relative">
+											{element.name}{' '}
+											<IconSvg
+												variant="arrow"
+												color="#e3efff"
+												size="14"
+												margin="0.65rem 0 0 0.5rem"
+												position="absolute"
+											/>
+										</a>
 									</Link>
 								</li>
 							);
@@ -38,7 +51,7 @@ export default function ElementList({ identifier }) {
 					)}
 				</ul>
 			</details>
-		</section>
+		</ListSection>
 	);
 }
 

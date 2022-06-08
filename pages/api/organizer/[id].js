@@ -1,6 +1,5 @@
 import { dbConnect } from '../../../src/lib/db/database';
 import Organizer from '../../../src/models/Organizer';
-import Animal from '../../../src/models/Animal';
 
 export default async function handler(req, res) {
 	const { id } = req.query;
@@ -9,14 +8,14 @@ export default async function handler(req, res) {
 		const data = JSON.parse(req.body);
 		await dbConnect();
 
-		const organizerSpots = [];
-		const organizerAnimals = [];
+		let organizerSpots = [];
+		let organizerAnimals = [];
 		if (data.checkedRefs.spots !== []) {
 			data.checkedRefs.spots.forEach(spot => {
 				const spotId = spot.split('$$')[0];
 				const spotName = spot.split('$$')[1];
 
-				organizerSpots.push({ name: spotName, spotsRef: spotId });
+				organizerSpots.push({ name: spotName, animalsRef: [], spotsRef: spotId });
 			});
 
 			if (data.checkedRefs.animals !== []) {
@@ -27,12 +26,13 @@ export default async function handler(req, res) {
 
 					var index = organizerSpots.findIndex(spot => spot.spotsRef === spotRef);
 					if (index !== -1) {
-						organizerSpots[index].animalsRef = animalRef;
+						organizerSpots[index].animalsRef.push = animalRef;
 					}
 				});
 			}
 		}
 
+		/*
 		const updatedOrganizer = await Organizer.findByIdAndUpdate(
 			id,
 			{
@@ -85,6 +85,7 @@ export default async function handler(req, res) {
 			message: 'Something went wrong',
 			entry: req.body,
 		});
+		*/
 	} else if (req.method === 'DELETE') {
 		//await dbConnect();
 

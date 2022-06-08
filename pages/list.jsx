@@ -3,6 +3,7 @@ import useStore from '../src/lib/hooks/useStore';
 import getDbData from '../src/services/get-dbData';
 import { SWRConfig } from 'swr';
 import swrFetcher from '../src/lib/db/swr-fetcher';
+import Main from '../src/components/ui/Main/Main.styled';
 import ElementList from '../src/components/ElementList/ElementList';
 
 export async function getStaticProps() {
@@ -23,7 +24,7 @@ export async function getStaticProps() {
 export default function ListAll({ fallback }) {
 	const keyArray = useStore(state => state.keyArray);
 	return (
-		<>
+		<Main>
 			{keyArray.map(keyValue => {
 				return (
 					<SWRConfig key={keyValue} value={{ fetcher: swrFetcher, fallback }}>
@@ -31,7 +32,7 @@ export default function ListAll({ fallback }) {
 					</SWRConfig>
 				);
 			})}
-		</>
+		</Main>
 	);
 }
 

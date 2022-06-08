@@ -10,6 +10,46 @@ export default async function handler(req, res) {
 		const data = JSON.parse(req.body);
 		await dbConnect();
 
+		if (data.newId) {
+			if (data.checkedRefs.animals !== []) {
+				data.checkedRefs.animals = data.checkedRefs.animals.map(animal =>
+					animal.toString()
+				);
+			}
+
+			let resArray = [];
+			if (data.checkedRefs.organizers !== []) {
+				const updatedOrganizersAdd = await Organizer.updateMany(
+					{ _id: { $in: data.checkedRefs.organizers } },
+					{
+						$push: {
+							spots: {
+								name: data.newName,
+								animalsRef: data.checkedRefs.animals,
+								spotsRef: id,
+							},
+						},
+					}
+				);
+				resArray.push = updatedOrganizersAdd;
+			}
+			if (data.checkedRefs.animals !== []) {
+				const updatedAnimalsAdd = await Animal.updateMany(
+					{ _id: { $in: data.checkedRefs.animals } },
+					{
+						$push: { spotsRef: id },
+					}
+				);
+				resArray.push = updatedAnimalsAdd;
+			}
+
+			res.status(200).json({
+				message: 'Organizers to add updated',
+				entry: resArray,
+			});
+		}
+
+		/*
 		const updatedSpot = await Spot.findByIdAndUpdate(
 			id,
 			{
@@ -95,39 +135,24 @@ export default async function handler(req, res) {
 			message: 'Something went wrong',
 			entry: req.body,
 		});
+		*/
 	} else if (req.method === 'DELETE') {
 		await dbConnect();
 
 		const updatedAnimalsCut = await Animal.updateMany(
-			{
-				spotsRef: { $in: id },
-			},
-			{
-				$pull: { spotsRef: id },
-			}
+			{ spotsRef: { $in: id } },
+			{ $pull: { spotsRef: id } }
 		);
-		res.status(200).json({
-			message: 'Animals to cut updated',
-			entry: updatedAnimalsCut,
-		});
-
+		Organizer.find;
 		const updatedOrganizersCut = await Organizer.updateMany(
-			{
-				spotsRef: { $in: id },
-			},
-			{
-				$pull: { spotsRef: id },
-			}
+			{},
+			{ $pull: { spots: { 'spots.$[element].spotsRef': id } } }
 		);
-		res.status(200).json({
-			message: 'Organizers to cut updated',
-			entry: updatedOrganizersCut,
-		});
 
 		const deletedSpot = await Spot.findByIdAndDelete(id);
 		res.status(200).json({
 			message: 'Spot deleted',
-			product: deletedSpot,
+			deletedEntry: [deletedSpot, updatedOrganizersCut, updatedAnimalsCut],
 		});
 	} else {
 		const singleSpot = await Spot.findById(id);
