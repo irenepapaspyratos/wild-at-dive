@@ -41,4 +41,7 @@ module.exports = {
 		// return {...config, resolve: {...config.resolve, exportsFields:[]}}
 		return config;
 	},
+	images: {
+		domains: ['source.unsplash.com'],
+	},
 };

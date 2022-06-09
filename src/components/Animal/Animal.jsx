@@ -7,6 +7,9 @@ import { useState } from 'react';
 import useSWRConfig from 'swr';
 import { useRouter } from 'next/router';
 import ButtonSection from '../ui/Button/ButtonSection.styled';
+import ImageStyled from '../ui/ImageComp/ImageStyled.styled';
+import ImageSection from '../ui/ImageComp/ImageSection.styled';
+import Image from 'next/image';
 
 export default function Animal({ index, spots, animals, organizers }) {
 	const router = useRouter();
@@ -27,7 +30,24 @@ export default function Animal({ index, spots, animals, organizers }) {
 				<header>
 					<h1>{animal.name}</h1>
 				</header>
-
+				<ImageSection>
+					<ImageStyled>
+						<Image
+							src={`https://source.unsplash.com/random/300x300/?${animal.name}"`}
+							height="100"
+							width="150"
+							alt={`Image of ${animal.name}`}
+						/>
+					</ImageStyled>
+					<ImageStyled>
+						<Image
+							src={`https://source.unsplash.com/random/300x300/?${animal.name}`}
+							height="100"
+							width="150"
+							alt={`Image of ${animal.name}`}
+						/>
+					</ImageStyled>
+				</ImageSection>
 				<section>
 					<h3>Description</h3>
 					<p>{animal.description}</p>

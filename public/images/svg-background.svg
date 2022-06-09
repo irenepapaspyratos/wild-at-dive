@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="375" height="667" preserveAspectRatio="none" viewBox="0 0 375 667">
+    <g mask="url(&quot;#SvgjsMask3410&quot;)" fill="none">
+        <rect width="375" height="667" x="0" y="0" fill="url(#SvgjsRadialGradient3411)"></rect>
+        <path d="M375 0L248.82 0L375 283.03z" fill="rgba(255, 255, 255, .1)"></path>
+        <path d="M248.82 0L375 283.03L375 464.59L224.76999999999998 0z" fill="rgba(255, 255, 255, .075)"></path>
+        <path d="M224.76999999999998 0L375 464.59L375 550.56L108.52999999999999 0z" fill="rgba(255, 255, 255, .05)"></path>
+        <path d="M108.52999999999997 0L375 550.56L375 580.88L74.88999999999997 0z" fill="rgba(255, 255, 255, .025)"></path>
+        <path d="M0 667L167.11 667L0 561.3199999999999z" fill="rgba(0, 0, 0, .1)"></path>
+        <path d="M0 561.3199999999999L167.11 667L229.01000000000002 667L0 347.41999999999996z" fill="rgba(0, 0, 0, .075)"></path>
+        <path d="M0 347.41999999999996L229.01000000000002 667L255.14000000000001 667L0 156.61999999999995z" fill="rgba(0, 0, 0, .05)"></path>
+        <path d="M0 156.61999999999995L255.14000000000001 667L271.3 667L0 124.43999999999994z" fill="rgba(0, 0, 0, .025)"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask3410">
+            <rect width="375" height="667" fill="#ffffff"></rect>
+        </mask>
+        <radialGradient cx="0%" cy="100%" r="765.19" gradientUnits="userSpaceOnUse" id="SvgjsRadialGradient3411">
+            <stop stop-color="rgba(0, 0, 0, 1)" offset="0.17"></stop>
+            <stop stop-color="rgba(0, 60, 137, 1)" offset="1"></stop>
+        </radialGradient>
+    </defs>
+</svg>
