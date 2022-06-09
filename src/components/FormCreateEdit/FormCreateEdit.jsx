@@ -280,7 +280,7 @@ export default function FormCreateEdit({ keyValue, data, id }) {
 								Name
 								<Input
 									required
-									placeholder=""
+									placeholder="Icebear"
 									type="text"
 									name="nameAnimal"
 									label="nameAnimal"
@@ -298,7 +298,7 @@ export default function FormCreateEdit({ keyValue, data, id }) {
 								Description
 								<Input
 									//required
-									placeholder=""
+									placeholder="The polar bear is a hypercarnivorous bear whose native range lies largely within the Arctic Circle"
 									type="text"
 									name="descriptionAnimal"
 									label="descriptionAnimal"
@@ -316,7 +316,7 @@ export default function FormCreateEdit({ keyValue, data, id }) {
 								Wikipedia-Url
 								<Input
 									//required
-									placeholder=""
+									placeholder="https://en.wikipedia.org/wiki/Icebear"
 									type="text"
 									name="wikiAnimal"
 									label="wikiAnimal"
