@@ -16,13 +16,13 @@ function Map() {
 	errorOrganizers && <h3>Error: {errorOrganizers.message}</h3>;
 	const addMarkers = useAddMarkers(spots, animals, organizers);
 	const cesiumContainerRef = useRef();
+	const Ion.defaultAccessToken = process.env.CESIUM_TOKEN;
 
 	useEffect(() => {
 		if (cesiumContainerRef.current) {
 			const childNo = cesiumContainerRef.current.querySelector('.cesium-viewer');
 
 			if (!childNo) {
-				const Ion.defaultAccessToken = process.env.CESIUM_TOKEN;
 				const viewer = new Viewer('cesiumContainer', {
 					terrainProvider: createWorldTerrain(),
 				});
