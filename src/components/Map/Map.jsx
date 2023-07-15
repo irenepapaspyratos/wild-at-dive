@@ -1,7 +1,7 @@
 import MapContainer from '../ui/MapContainer/MapContainer.styled';
 import { useRef, useEffect } from 'react';
 import useStore from '../../lib/hooks/useStore';
-import { createWorldTerrain, Viewer } from 'cesium';
+import { createWorldTerrain, Viewer, Ion } from 'cesium';
 import useAddMarkers from '../../lib/hooks/useAddMarkers';
 import useSWR from 'swr';
 
@@ -22,6 +22,7 @@ function Map() {
 			const childNo = cesiumContainerRef.current.querySelector('.cesium-viewer');
 
 			if (!childNo) {
+				const Ion.defaultAccessToken = process.env.CESIUM_TOKEN;
 				const viewer = new Viewer('cesiumContainer', {
 					terrainProvider: createWorldTerrain(),
 				});
