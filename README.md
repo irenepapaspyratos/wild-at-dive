@@ -2,7 +2,9 @@
 
 This is the final [Next.js](https://nextjs.org/)  project (bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)) of my Web Development Certification in 2022 at Neue Fische.
 
-Thanks to Cesium, it contains an interactive 360° rotating globe to find, add or edit diving spots all over the world. The intention was, to keep a nice place to save all the spots, where diving-trips are organized with special, rare and/or dangerous animals. Visitors simply can click on each spot to see all it's details displayed.
+Thanks to Cesium, it contains an interactive 360° rotating globe to find, add or edit diving spots all over the world. The intention was, to keep a nice place to save all the spots, where diving-trips are organized with special, rare and/or dangerous animals. Visitors simply can click on each spot to see all it's details displayed. 
+
+At the moment this project is under construction, so only the preview is available - showing the diving spots on an invisible globe. 
 
 ## Getting Started
 
